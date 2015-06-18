@@ -73,12 +73,13 @@
                 <hr>
                 <p>The most amazing BBQ tongs. Ever.</p>
 
-                <form class="form-inline" role="form">
+                <%= form_for :user, html: {class: "form-inline"}, url: {controller: "users", action: "create"} do |f| %>
                 <div class="form-group">
-                    <input type="email" class="form-control" id="email" placeholder="Email Address">
+                    <!-- <input name="user[email]" type="email" class="form-control" id="email" placeholder="Email Address"> -->
+                    <%= f.email_field :email, class: "form-control" %>
                 </div>
                 <button type="submit" class="btn btn-primary btn-xl page-scroll">Update me</button>
-                </form>
+                <% end %>
 
             </div>
         </div>
